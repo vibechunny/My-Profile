@@ -24,17 +24,17 @@
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #e2e2e2;
-      color: #404040;
-      line-height: 1.6;
+      background-color: #e2e2e2 !important;
+      color: #404040 !important;
+      line-height: 1.5;
       margin: 0;
-      padding: 40px 20px;
+      padding: 30px 15px;
     }
     .cv-container {
       max-width: 850px;
-      background-color: #FFFFFF;
+      background-color: #FFFFFF !important;
       margin: 0 auto;
-      padding: 60px 70px;
+      padding: 60px 55px;
       box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     }
     header {
@@ -42,15 +42,15 @@
       margin-bottom: 40px;
     }
     h1.name {
-      color: #B8860B; /* Vàng đậm */
-      font-size: 38px;
+      color: #B8860B !important; /* Vàng đậm */
+      font-size: 40px;
       font-weight: bold;
       margin: 0 0 5px 0;
       letter-spacing: 1px;
       text-transform: uppercase;
     }
     .job-title {
-      color: #808080; /* Xám ghi */
+      color: #808080 !important; /* Xám ghi */
       font-size: 18px;
       font-weight: 600;
       letter-spacing: 2px;
@@ -58,21 +58,21 @@
       text-transform: uppercase;
     }
     .contact-info {
-      color: #2B2B2B; /* Đen nhám */
+      color: #2B2B2B !important; /* Đen nhám */
       font-size: 14px;
     }
     .contact-info a {
-      color: #B8860B;
+      color: #B8860B !important;
       text-decoration: none;
     }
     .section {
       margin-bottom: 30px;
     }
     .section-title {
-      color: #2B2B2B;
+      color: #2B2B2B !important;
       font-size: 20px;
       font-weight: bold;
-      border-bottom: 2px solid #DAA520; /* Vàng đất */
+      border-bottom: 2px solid #DAA520 !important; /* Vàng đất */
       padding-bottom: 5px;
       margin-bottom: 15px;
       text-transform: uppercase;
@@ -92,7 +92,7 @@
       margin-bottom: 8px;
     }
     .skill-item strong {
-      color: #DAA520; /* Vàng đất */
+      color: #DAA520 !important; /* Vàng đất */
     }
     .experience-block, .project-block, .education-block {
       margin-bottom: 25px;
@@ -104,18 +104,18 @@
       margin-bottom: 2px;
     }
     .company-name {
-      color: #DAA520; /* Vàng đất */
+      color: #DAA520 !important; /* Vàng đất */
       font-size: 18px;
       font-weight: bold;
       text-transform: uppercase;
     }
     .date {
-      color: #808080; /* Xám ghi */
+      color: #808080 !important; /* Xám ghi */
       font-size: 14px;
       font-style: italic;
     }
     .role-title {
-      color: #2B2B2B;
+      color: #2B2B2B !important;
       font-size: 16px;
       font-weight: bold;
       margin-bottom: 8px;
@@ -123,6 +123,60 @@
     .details {
       margin-bottom: 8px;
     }
+
+
+    @page {
+      size: A4;
+      margin: 10mm 15mm;
+    }
+
+    @media print {
+      html,
+      body {
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #FFFFFF !important;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+        color: #404040 !important;
+        line-height: 1.5;
+      }
+
+      .cv-container {
+        width: auto !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        background: #FFFFFF !important;
+      }
+
+      header {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .section-title {
+        break-after: avoid;
+        page-break-after: avoid;
+      }
+
+      .experience-block,
+      .project-block,
+      .education-block {
+        break-inside: avoid-page;
+        page-break-inside: avoid;
+      }
+
+      li {
+        orphans: 2;
+        widows: 2;
+      }
+
+      a[href]::after {
+        content: none !important;
+      }
+    }
+
   </style>
 </head>
 
@@ -187,12 +241,12 @@
         <li><strong>Description:</strong> An internal platform managing manufacturing workflows, shipment tracking, and project administration.</li>
         <li><strong>Responsibilities:</strong>
           <ul>
-            <li>Analyzed requirements and designed/executed 500+ manual test cases for Manufacturing, Shipment Tracking, and Authentication modules.</li>
-            <li>Conducted End-to-End API testing for 100+ endpoints via Swagger and Postman, focusing on payload structures and third-party webhooks (Shipsgo API).</li>
-            <li>Leveraged SQL Server to execute complex queries and analyze execution plans, ensuring database integrity and optimizing API response times to under 100ms.</li>
-            <li>Utilized AI tools (GitHub Copilot, Gemini, ChatGPT) to draft unit tests and validate scheduled background jobs via Hangfire.</li>
-            <li>Logged and tracked 200+ defects on Jira with structured reproduce steps, reducing post-release critical bugs by 20%.</li>
-            <li>Set up IIS test environments and supported end-users during UAT phases to gather feedback and refine system usability.</li>
+            <li>Analyzed requirements and Designed and executed 500+ manual test cases for Manufacturing, Shipment Tracking, and Authentication modules based on requirement analysis.</li>
+            <li>Tested 100+ API endpoints using Swagger and Postman, validating payloads and Shipsgo third-party webhooks.</li>
+            <li>Queried SQL Server and analyzed execution plans to verify data integrity and optimize API response times to under 100ms.</li>
+            <li>Used AI tools (GitHub Copilot, Gemini, and ChatGPT) to draft unit tests and validate Hangfire background jobs.</li>
+            <li>Managed 200+ Jira defects with reproducible steps, contributing to a 20% reduction in post-release critical bugs.</li>
+            <li>Configured IIS test environments and supported UAT, collecting user feedback to improve system usability.</li>
           </ul>
         </li>
         <li><strong>Awards:</strong> Honored with the "Smart Solutions" Award at YEP 2025 for driving software quality and process optimization.</li>
@@ -213,10 +267,10 @@
         <li><strong>Responsibilities:</strong>
           <ul>
             <li>Analyzed business requirements to design and execute 200+ manual test cases for complex logistics workflows.</li>
-            <li>Built core functionalities using .NET and SQL Server, leveraging this development background to easily anticipate and identify edge cases in business logic.</li>
-            <li>Verified 20+ API integrations with Tan Cang API Gateway for eDO operations via Postman, ensuring 100% data mapping accuracy.</li>
-            <li>Performed White-box testing on automated background jobs (data synchronization, automated reporting emails) by writing complex SQL queries to validate data state changes and database integrity.</li>
-            <li>Analyzed backend logs to trace defect root causes and supported end-users during UAT phases to identify logical gaps early in the SDLC.</li>
+            <li>Developed .NET and SQL Server features, leveraging development knowledge to identify business logic edge cases.</li>
+            <li>Tested 20+ eDO API integrations via Tan Cang API Gateway using Postman, verifying data mapping accuracy.</li>
+            <li>Tested background jobs through white-box testing and SQL queries, validating data synchronization, automated reports, and database integrity.</li>
+            <li>Analyzed backend logs to trace defect root causes and supported UAT to identify logic gaps early in the SDLC.</li>
           </ul>
         </li>
         <li><strong>Skills:</strong> Requirement Analysis, Manual Testing, Test Scenarios Design, API Integration Testing, UAT Support, SDLC.</li>
@@ -254,21 +308,19 @@
         <div class="date">Aug 2026 - Dec 2026</div>
       </div>
       <ul>
-        <li><strong>Testing Types Covered:</strong> Functional, Non-functional, Structural, Confirmation & Regression Testing.</li>
+        <li>Testing Types Covered: Functional, Non-functional, Structural, Confirmation & Regression Testing.</li>
         <li><strong>Projects tested:</strong> OrangeHRM, Fiverr Freelance, Cyber Airbnb (Room Booking), and Cinema Booking.</li>
         <li><strong>Manual & API Testing:</strong>
           <ul>
-            <li>Analyzed SRS specifications, created Test Plans, and designed 500+ manual test cases utilizing Boundary Value Analysis (BVA), Equivalence Partitioning (EP), Decision Table, and Error Guessing.</li>
-            <li>Executed test cases, logged, and managed 50+ defects on Jira with Severity/Priority levels and detailed reproduction steps.</li>
-            <li>Performed API testing using Swagger and built Postman collections with 80+ assertions to validate status codes, response times, and dynamic JSON schemas.</li>
-            <li>Conducted basic performance testing utilizing JMeter.</li>
+            <li>Analyzed SRS requirements, created test plans, and designed 500+ test cases using BVA, EP, Decision Table, and Error Guessing.</li>
+            <li>Executed test cases, logged, and managed 50+ Jira defects with severity/priority classification and reproduction steps.</li>
+            <li>Built Postman collections with 80+ assertions to validate API status codes, response times, and dynamic JSON schemas; conducted basic performance testing using JMeter.</li>
           </ul>
         </li>
         <li><strong>Automation Testing (Java Selenium & Playwright):</strong>
           <ul>
-            <li>Currently practicing and building an Automated Test Framework utilizing Java Selenium (Maven) and Playwright via IntelliJ IDE.</li>
-            <li>Applying OOP principles and Page Object Model (POM) to write scripts automating core UI test scenarios for End-to-End user journeys (Authentication, Form Submissions).</li>
-            <li>Managing test source code and versions utilizing Git.</li>
+            <li>Currently practicing and building Automated scripts for end-to-end authentication and form submission flows using Java Selenium (Maven) and Playwright.</li>
+            <li>Applied OOP and Page Object Model (POM) principles while managing test code with Git.</li>
           </ul>
         </li>
       </ul>
